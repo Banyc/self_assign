@@ -35,7 +35,7 @@ mod tests {
                 b: _,
                 c,
             };
-        };
+        }
 
         assert_eq!(s.a, 1);
         assert_eq!(s.b, "test");

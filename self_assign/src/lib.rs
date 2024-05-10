@@ -50,7 +50,7 @@ impl Parse for SelfAssign {
             _ => {
                 return Err(syn::Error::new(
                     input.span(),
-                    format!("`stmt` expected `Stmt::Expr`, found {stmt:?}"),
+                    format!("`stmt` expected `Stmt::Expr`, found `{}`", quote! { #stmt }),
                 ));
             }
         };
@@ -59,7 +59,10 @@ impl Parse for SelfAssign {
             _ => {
                 return Err(syn::Error::new(
                     input.span(),
-                    format!("`expr` expected `Expr::Assign`, found {expr:?}"),
+                    format!(
+                        "`expr` expected `Expr::Assign`, found `{}`",
+                        quote! { #expr }
+                    ),
                 ));
             }
         };
@@ -70,7 +73,10 @@ impl Parse for SelfAssign {
             _ => {
                 return Err(syn::Error::new(
                     input.span(),
-                    format!("`right` expected `Expr::Struct`, found {right:?}"),
+                    format!(
+                        "`right` expected `Expr::Struct`, found `{}`",
+                        quote! { #right }
+                    ),
                 ));
             }
         };
@@ -83,7 +89,10 @@ impl Parse for SelfAssign {
                 _ => {
                     return Err(syn::Error::new(
                         input.span(),
-                        format!("`member` expected `Member::Named`, found {member:?}"),
+                        format!(
+                            "`member` expected `Member::Named`, found `{}`",
+                            quote! { #member }
+                        ),
                     ));
                 }
             };
