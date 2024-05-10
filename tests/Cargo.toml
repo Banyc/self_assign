@@ -1,0 +1,10 @@
+[package]
+name = "tests"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+proc-macro2 = { workspace = true }
+quote = { workspace = true }
+self_assign = { path = "../self_assign" }
+syn = { workspace = true }

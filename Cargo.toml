@@ -1,0 +1,8 @@
+[workspace]
+resolver = "2"
+members = ["self_assign", "tests"]
+
+[workspace.dependencies]
+proc-macro2 = "1"
+quote = "1"
+syn = { version = "2", features = ["extra-traits", "full"] }
